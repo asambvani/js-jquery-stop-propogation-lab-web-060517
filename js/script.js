@@ -5,19 +5,21 @@ $(document).ready(function() {
   yellowLight();
   greenLight();
 
-  
 });
 
 function lightActive(){
   $('.light').on('click', function(){
+      event.stopPropagation();
       $(this).toggleClass("active");
       console.log("background purple")
+
   });
 }
 
 function redLight(){
   $(".redLight").on('click', function(){
     $(this).toggleClass("red");
+    event.stopPropagation();
   });
 }
 
@@ -25,12 +27,13 @@ function redLight(){
 function yellowLight(){
   $(".yellowLight").on('click', function(){
     $(this).toggleClass("yellow");
+    event.stopPropagation();
   });
 }
 
 function greenLight(){
   $(".greenLight").on('click', function(){
     $(this).toggleClass("green");
+    event.stopPropagation();
   });
 }
-
